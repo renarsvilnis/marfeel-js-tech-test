@@ -1,0 +1,16 @@
+{
+  "name": "marfeel-js-tech-test",
+  "version": "0.0.1",
+  "authors": [
+    "Renārs Vilnis <renars.vilnis@gmail.com>"
+  ],
+  "description": "Assignment for Marfeel recruitment",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
