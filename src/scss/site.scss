@@ -1,59 +1,30 @@
-/*@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,300);*/
-@import url(http://fonts.googleapis.com/css?family=Karla:400,700);
+@charset 'UTF-8';
 
-@mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
+// Vendors - all the CSS files from external libraries and frameworks
+// bower:scss
+// endbower
 
-$widget-label-font-size: 0.875em;
-$widget-font-family: 'Karla', sans-serif;
+// Utils - gathers all Sass tools and helpers used across the project.
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/helpers';
 
-.pie-graph-widget {
+// Fonts
+@import 'fonts/karla';
 
-  width: 280px;
-  padding-bottom: 0.5em;
-  border-bottom: 2px solid #E2E2E2;
-  font-family: $widget-font-family;
-  @include clearfix;
+// Base - holds what we might call the boilerplate code for the project.
+@import 'base/typography';
+@import 'base/base';
 
-  &__svg {
-    display: block;
-    margin: 0 auto 0.5em;
-  }
+// Layout - contains everything that takes part in laying out the site or application.
+// @import 'layout/{filename}';
 
-  &__label {
-    width: 50%;
+// Components - is more focused on widgets.
+@import 'components/chart';
 
-    &--left {
-      float: left;
-      text-align: left;
-    }
-    &--right {
-      float: right;
-      text-align: right;
-    }
-  }
+// Pages - page-specific styles
+// @import 'pages/index';
 
-  &__label-name {
-    font-size: $widget-label-font-size;
-    font-weight: 700;
-  }
-
-  &__label-percentage {
-    font-size: $widget-label-font-size;
-    font-weight: 400;
-    margin-right: 0.5em;
-  }
-
-  &__label-value {
-    font-size: $widget-label-font-size;
-    font-weight: 400;
-    color: #9A9A9A;
-  }
-
-
-}
+// Theme - On large sites and applications, it is not unusual to have different themes.
+// @import 'themes/{filename}';

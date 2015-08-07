@@ -23,7 +23,7 @@ class PieChart {
       .append('svg')
       .attr('width', width)
       .attr('height', height)
-      .attr('class', 'pie-graph-widget__svg');
+      .attr('class', 'chart__svg');
     
     // using a main group to offset drawing to the center off svg
     this.mainGroup = this.ctx.append('g')
@@ -43,11 +43,11 @@ class PieChart {
       .innerRadius(this.innerRadius);
 
     // create arc parts
-    this.arcs = this.mainGroup.selectAll('.arc')
+    this.arcs = this.mainGroup.selectAll('.chart__graph-arc')
       .data(this.pie(this.data.pieData))
       .enter()
         .append('g')
-        .attr('class', 'arc');
+        .attr('class', 'chart__graph-arc');
 
     // for each arc add path
     this.arcs.append('path')
@@ -93,11 +93,11 @@ class PieChart {
       .domain([0, 3])
       .range([0, 270]);
 
-    this.mainGroup.selectAll('.pie-graph-widget__guide-line')
+    this.mainGroup.selectAll('.chart__guide-line')
       .data(d3.range(0, 4))
       .enter()
         .append('line')
-        .attr('class', 'pie-graph-widget__guide-line')
+        .attr('class', 'chart__guide-line')
         .attr('x1', 0)
         .attr('x2', 0)
         .attr('y1', this.outerRadius)

@@ -1,6 +1,6 @@
 
 
-let PieGraphWidget = require('./components/PieGraphWidget.js');
+let PieGraphWidget = require('./components/PieChartWidget.js');
 
 let mocksWidgets = require('./mocks/widgets.js');
 

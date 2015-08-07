@@ -1,0 +1,46 @@
+.chart {
+
+  width: 280px;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid #E2E2E2;
+  font-family: $font-family;
+  @include clearfix;
+
+  &__svg {
+    display: block;
+    margin: 0 auto 0.5em;
+  }
+
+  &__label {
+    width: 50%;
+
+    &--left {
+      float: left;
+      text-align: left;
+    }
+    &--right {
+      float: right;
+      text-align: right;
+    }
+
+    &-name {
+      font-size: $chart-label-font-size;
+      font-weight: 700;
+    }
+
+    &-percentage {
+      font-size: $chart-label-font-size;
+      font-weight: 400;
+      margin-right: 0.5em;
+    }
+
+    &-value {
+      font-size: $chart-label-font-size;
+      font-weight: 400;
+      color: #9A9A9A;
+    }
+
+  }
+
+
+}

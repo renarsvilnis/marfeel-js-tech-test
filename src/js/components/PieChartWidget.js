@@ -26,7 +26,7 @@ class PieGraphWidget {
     console.log(data, opts);
 
     let base = document.createElement('div');
-    base.classList.add('pie-graph-widget');
+    base.classList.add('chart');
 
     // place it in dome before creating pie chart, as it calculated rendered
     // height of elements
