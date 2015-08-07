@@ -1,3 +1,59 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat);
+/*@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,300);*/
+@import url(http://fonts.googleapis.com/css?family=Karla:400,700);
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+$widget-label-font-size: 0.875em;
+$widget-font-family: 'Karla', sans-serif;
+
+.pie-graph-widget {
+
+  width: 280px;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid #E2E2E2;
+  font-family: $widget-font-family;
+  @include clearfix;
+
+  &__svg {
+    display: block;
+    margin: 0 auto 0.5em;
+  }
+
+  &__label {
+    width: 50%;
+
+    &--left {
+      float: left;
+      text-align: left;
+    }
+    &--right {
+      float: right;
+      text-align: right;
+    }
+  }
+
+  &__label-name {
+    font-size: $widget-label-font-size;
+    font-weight: 700;
+  }
+
+  &__label-percentage {
+    font-size: $widget-label-font-size;
+    font-weight: 400;
+    margin-right: 0.5em;
+  }
+
+  &__label-value {
+    font-size: $widget-label-font-size;
+    font-weight: 400;
+    color: #9A9A9A;
+  }
 
 
+}

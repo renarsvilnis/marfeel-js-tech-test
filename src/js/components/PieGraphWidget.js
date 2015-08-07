@@ -3,8 +3,8 @@ var objectAssign = require('object-assign');
 var PieChart = require('./../components/PieChart.js');
 
 let defaults = {
-  width: 150,
-  height: 150,
+  width: 176,
+  height: 176,
   circleWidth: 10
 };
 

@@ -23,3 +23,12 @@ npm test
 ```bash
 NODE_ENV=production gulp
 ```
+
+
+
+### Architecture
+(Arrow indicates on parent)
+Stores -> Model
+Templates -> View
+Model + View -> Controller
+

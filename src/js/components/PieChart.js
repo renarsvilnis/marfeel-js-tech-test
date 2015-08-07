@@ -2,6 +2,9 @@
 
 var d3 = require('d3');
 
+
+let fontFamily = '\'Karla\', sans-serif';
+
 class PieChart {
   
   constructor(parentNode, data, opts) {
@@ -19,7 +22,8 @@ class PieChart {
     this.ctx = d3.select(parentNode)
       .append('svg')
       .attr('width', width)
-      .attr('height', height);
+      .attr('height', height)
+      .attr('class', 'pie-graph-widget__svg');
     
     // using a main group to offset drawing to the center off svg
     this.mainGroup = this.ctx.append('g')
@@ -60,19 +64,19 @@ class PieChart {
     this.h1 = this.textGroup
       .append('text')
       .attr('text-anchor', 'middle')
-      .attr('font-weight', 'normal')
+      .attr('font-weight', '700')
       .attr('fill', '#999999')
-      .attr('font-family', '\'Montserrat\', sans-serif')
-      .attr('font-size', 14)
+      .attr('font-family', fontFamily)
+      .attr('font-size', 18)
       .text(this.data.title);
 
     this.h2 = this.textGroup
       .append('text')
       .attr('text-anchor', 'middle')
-      .attr('font-weight', 'normal')
+      .attr('font-weight', '400')
       .attr('fill', '#303030')
-      .attr('font-family', '\'Montserrat\', sans-serif')
-      .attr('font-size', 18)
+      .attr('font-family', fontFamily)
+      .attr('font-size', 22)
       .text(this.data.subTitle);
 
     // verticaly align both items
