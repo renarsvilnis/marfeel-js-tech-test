@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "server": "./node_modules/http-server/bin/http-server -o --cors" 
+    "server": "./node_modules/http-server/bin/http-server -o --cors"
   },
   "author": "Renārs Vilnis <renars.vilnis@gmail.com>",
   "license": "MIT",
@@ -36,6 +36,7 @@
     "main-bower-files": "^2.9.0",
     "mocha": "^2.2.5",
     "object-assign": "^3.0.0",
+    "string-template": "^0.2.1",
     "through2": "^2.0.0",
     "wiredep": "^3.0.0-beta"
   }

@@ -30,6 +30,7 @@ class PieChart {
       .attr('transform', 'translate(' + (width / 2) + ', ' + (height / 2) + ')');
     
     // create pie chart constructor
+    // TODO: add animation http://bl.ocks.org/mbostock/1346410
     this.pie = d3.layout.pie()
       .sort(null)
       .value(d => d.dataValue);

@@ -61,29 +61,46 @@ module.exports = {
   }
 };
 
-let temp = {
+// let temp = {
 
-  'items': [
-    {
-      name: 'Smartphone',
-      revenue: {
-        name: '120.000€',
-        value: 120000,
-        history: [
-          160000,
-          150000,
-          170000,
-          160000,
-          190000,
-          180000,
-          210000,
-          200000,
-          200000,
-          210000,
-          220000,
-          200000
-        ]
-      },
+//   // items
+//   Tablet
+//   Smartphone
+
+//   item
+
+//   // values per each
+//   revenue,
+//   impressions,
+//   visits
+// }
+
+var convertToDot = function(number) {
+  var input = number + '';
+
+  var output = '';
+
+  var lastSlice;
+
+  for(let i = input.length - 1, j = 1; i >= 0; i--, j++) {
+    if(j % 3 === 0) {
+      output = input.slice(i, lastSlice) + output;
+      lastSlice = i;
+
+      if(i > 0)
+        output = '.' + output;
     }
-  ]
-}
+  }
+
+  let remaining = input.slice(0, lastSlice);
+  output = remaining + output;
+
+  return output;
+};
+
+console.log(1, convertToDot(1));
+console.log(10, convertToDot(10));
+console.log(100, convertToDot(100));
+console.log(1000, convertToDot(1000));
+console.log(10000, convertToDot(10000));
+console.log(100000, convertToDot(100000));
