@@ -11,6 +11,20 @@
     margin: 0 auto 0.5em;
   }
 
+  &__title {
+    text-anchor: middle;
+    font-weight: 700;
+    fill: #999999;
+    font-size: 18px;
+  }
+
+  &__sum {
+    text-anchor: middle;
+    font-weight: 400;
+    fill: #303030;
+    font-size: 22px;
+  }
+
   &__label {
     width: 50%;
 
@@ -40,6 +54,12 @@
       color: #9A9A9A;
     }
 
+  }
+
+  &__guide-line {
+    stroke-width: 3px;
+    stroke-width: 'round';
+    stroke: #999999;
   }
 
 
