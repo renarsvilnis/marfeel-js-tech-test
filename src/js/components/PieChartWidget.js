@@ -16,21 +16,6 @@ const DEFAULTS = {
   }
 };
 
-let mock = [
-  {
-    name: 'Tablet',
-    percentage: '60%',
-    value: '120.000€',
-    color: '#2196F3',
-  },
-  {
-    name: 'Smartphone',
-    percentage: '40%',
-    value: '80.000€',
-    color: '#64B5F6'
-  },
-];
-
 class ChartWidget {
   constructor(parentNode, data, opts) {
     this.parentNode = parentNode;
@@ -91,22 +76,23 @@ class ChartWidget {
     let pieData = this.data.pie;
     let pieColors = this.opts.colors.pie;
 
-    let mockData = {
-      i1Name: pieData[0].name,
-      i1Perc: pieData[0].percentageString,
-      i1Value: pieData[0].valueString,
-      i1Color: pieColors[0],
-      i2Name: pieData[1].name,
-      i2Perc: pieData[1].percentageString,
-      i2Value: pieData[1].valueString,
-      i2Color: pieColors[1]
+    // flip template data
+    let templateData = {
+      i1Name: pieData[1].name,
+      i1Perc: pieData[1].percentageString,
+      i1Value: pieData[1].valueString,
+      i1Color: pieColors[1],
+      i2Name: pieData[0].name,
+      i2Perc: pieData[0].percentageString,
+      i2Value: pieData[0].valueString,
+      i2Color: pieColors[0]
     };
 
     // create labels
     let labels = base
       .append('div')
       .attr('class', 'chart__labels')
-      .html(() => format(ChartWidget.LABEL_TEMPLATE, mockData));
+      .html(() => format(ChartWidget.LABEL_TEMPLATE, templateData));
 
     console.log(this.data, base.node());
 
@@ -126,4 +112,3 @@ ChartWidget.LABEL_TEMPLATE = "<div class='chart__label chart__label--left'>" +
 "</div>";
 
 module.exports = ChartWidget;
-

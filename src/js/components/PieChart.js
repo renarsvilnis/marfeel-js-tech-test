@@ -12,7 +12,6 @@ class PieChart {
     this.data = data;
     this.opts = opts;
 
-    // minimize lookups
     let width  = this.opts.width,
         height = this.opts.height;
 
@@ -30,32 +29,36 @@ class PieChart {
     var translate = 'translate(' + (width / 2) + ', ' + (height / 2) + ')';
     this.mainGroup = this.ctx.append('g')
       .attr('transform', translate);
-    
+
+    this.renderArcs();
+    this.renderText();
+    this.renderGuides()
+  }
+
+  renderArcs() {
+
     // create pie chart constructor
     // TODO: add animation http://bl.ocks.org/mbostock/1346410
-    this.pie = d3.layout.pie()
+    let pie = d3.layout.pie()
       .sort(null)
       .value(d => d.value);
-    
+
     // pie chart arc constructor
-    this.arc = d3.svg.arc()
+    let arc = d3.svg.arc()
       .outerRadius(this.outerRadius)
       .innerRadius(this.innerRadius);
 
     // create arc parts
-    this.arcs = this.mainGroup.selectAll('.chart__graph-arc')
-      .data(this.pie(this.data.pie))
+    let arcs = this.mainGroup.selectAll('.chart__graph-arc')
+      .data(pie(this.data.pie))
       .enter()
         .append('g')
         .attr('class', 'chart__graph-arc');
 
     // for each arc add path
-    this.arcs.append('path')
-      .attr('d', this.arc)
+    arcs.append('path')
+      .attr('d', arc)
       .attr('fill', (d,i) => this.opts.colors.pie[i]);
-
-    this.renderText();
-    this.renderGuides()
   }
   
   renderText() {
