@@ -33,7 +33,7 @@ class PieChart {
     // TODO: add animation http://bl.ocks.org/mbostock/1346410
     this.pie = d3.layout.pie()
       .sort(null)
-      .value(d => d.dataValue);
+      .value(d => d.value);
     
     this.outerRadius = Math.min(width, height) / 2;
     this.innerRadius = this.outerRadius - this.opts.circleWidth;
@@ -45,7 +45,7 @@ class PieChart {
 
     // create arc parts
     this.arcs = this.mainGroup.selectAll('.chart__graph-arc')
-      .data(this.pie(this.data.pieData))
+      .data(this.pie(this.data.pie))
       .enter()
         .append('g')
         .attr('class', 'chart__graph-arc');
@@ -53,8 +53,8 @@ class PieChart {
     // for each arc add path
     this.arcs.append('path')
       .attr('d', this.arc)
-      .attr('fill', d => d.data.color);
-    
+      .attr('fill', (d,i) => this.opts.colors.pie[i]);
+
     this.renderText();
     this.renderGuides()
   }
@@ -78,7 +78,7 @@ class PieChart {
       .attr('fill', '#303030')
       .attr('font-family', fontFamily)
       .attr('font-size', 22)
-      .text(this.data.subTitle);
+      .text(this.data.sumString);
 
     // verticaly align both items
     let heightOffset = this.h2.node().getBBox().height / 2;

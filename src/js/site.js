@@ -1,7 +1,7 @@
 
 
-let PieGraphWidget = require('./components/PieChartWidget.js');
+let Dashboard = require('./components/Dashboard.js');
 
 let mocksWidgets = require('./mocks/widgets.js');
 
-new PieGraphWidget(document.body, mocksWidgets.green);
+new Dashboard(document.body, mocksWidgets);
