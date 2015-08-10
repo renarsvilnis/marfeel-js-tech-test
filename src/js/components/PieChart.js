@@ -93,9 +93,8 @@ class PieChart {
         .attr('x2', 0)
         .attr('y1', this.innerRadius)
         .attr('y2', this.innerRadius - this.opts.circleWidth / 2)
-        .attr('transform', function(d){
-          return 'rotate(' + guideRotationScale(d) + ')';
-        });
+        .attr('transform', d => 'rotate(' + guideRotationScale(d) + ')');
+        
         // TODO add specific guide stroke
         // .style('stroke', '#333');
 
